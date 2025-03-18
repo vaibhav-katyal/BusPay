@@ -6,10 +6,6 @@
   <title>BusGo - Modern Bus Ticketing</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <div class="container">
@@ -38,26 +34,21 @@
             <h2>Welcome Back</h2>
             <form id="login-form">
               <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" id="login-email" placeholder="Email Address" required>
+                <i class="fas fa-phone"></i>
+                <input type="tel" placeholder="Phone Number" required>
               </div>
-              <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="login-password" placeholder="Password" required>
+              <div class="input-group otp-group" id="login-otp-group" style="display: none;">
+                <i class="fas fa-key"></i>
+                <input type="text" placeholder="Enter OTP" maxlength="6" required>
               </div>
-              <div class="forgot-password">
-                <a href="#" id="forgot-password-link">Forgot Password?</a>
-              </div>
-              <button type="submit" class="btn primary" id="login-btn">
-                <span class="btn-text">Login</span>
-                <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
-              </button>
+              <button type="button" class="btn primary" id="send-otp-btn">Send OTP</button>
+              <button type="submit" class="btn primary" id="verify-otp-btn" style="display: none;">Verify & Login</button>
               
               <div class="divider">
                 <span>OR</span>
               </div>
               
-              <button type="button" class="btn google" id="google-login-btn">
+              <button type="button" class="btn google">
                 <i class="fab fa-google"></i> Continue with Google
               </button>
             </form>
@@ -68,23 +59,19 @@
             <form id="signup-form">
               <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" id="signup-name" placeholder="Full Name" required>
-              </div>
-              <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" id="signup-email" placeholder="Email Address" required>
-              </div>
-              <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="signup-password" placeholder="Password" required minlength="6">
+                <input type="text" placeholder="Full Name" required>
               </div>
               <div class="input-group">
                 <i class="fas fa-phone"></i>
-                <input type="tel" id="signup-phone" placeholder="Phone Number" required>
+                <input type="tel" placeholder="Phone Number" required>
+              </div>
+              <div class="input-group otp-group" id="signup-otp-group" style="display: none;">
+                <i class="fas fa-key"></i>
+                <input type="text" placeholder="Enter OTP" maxlength="6" required>
               </div>
               <div class="language-select">
                 <label>Preferred Language</label>
-                <select id="signup-language">
+                <select>
                   <option value="english">English</option>
                   <option value="hindi">Hindi</option>
                   <option value="punjabi">Punjabi</option>
@@ -92,16 +79,14 @@
                   <option value="telugu">Telugu</option>
                 </select>
               </div>
-              <button type="submit" class="btn primary" id="signup-btn">
-                <span class="btn-text">Create Account</span>
-                <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
-              </button>
+              <button type="button" class="btn primary" id="signup-send-otp-btn">Send OTP</button>
+              <button type="submit" class="btn primary" id="signup-verify-btn" style="display: none;">Verify & Create Account</button>
               
               <div class="divider">
                 <span>OR</span>
               </div>
               
-              <button type="button" class="btn google" id="google-signup-btn">
+              <button type="button" class="btn google">
                 <i class="fab fa-google"></i> Sign up with Google
               </button>
             </form>
@@ -113,32 +98,9 @@
         </div>
       </div>
     </div>
-
-    <!-- Password Reset Modal -->
-    <div class="modal" id="password-reset-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Reset Password</h3>
-          <button class="close-modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form id="reset-password-form">
-            <div class="input-group">
-              <i class="fas fa-envelope"></i>
-              <input type="email" id="reset-email" placeholder="Enter your email address" required>
-            </div>
-            <button type="submit" class="btn primary" id="reset-btn">
-              <span class="btn-text">Send Reset Link</span>
-              <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
   </div>
 
-  <script type="module" src="./firebase-config.js"></script>
-  <script type="module" src="./auth.js"></script>
-    
+  <script src="script.js"></script>
 </body>
 </html>
+
