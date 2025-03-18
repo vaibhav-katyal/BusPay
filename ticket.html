@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusGo - Ticket</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ticket-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="back-button">
+        <a href="home.html"><i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="page-title">Your Ticket</div>
+      <div class="share-button">
+        <i class="fas fa-share-alt"></i>
+      </div>
+    </header>
+    
+    <main class="app-content">
+      <div class="glass-card ticket-card">
+        <div class="ticket-status">
+          <div class="status-badge confirmed">
+            <i class="fas fa-check-circle"></i>
+            <span>Confirmed</span>
+          </div>
+        </div>
+        
+        <div class="ticket-qr">
+          <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=BUSGO-TICKET-123456" alt="Ticket QR Code">
+          </div>
+          <div class="ticket-id">TRIP ID: BG-42-123456</div>
+        </div>
+        
+        <div class="ticket-details">
+          <div class="detail-row">
+            <div class="detail-label">Route</div>
+            <div class="detail-value">Route 42</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">From</div>
+            <div class="detail-value">Current Location</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">To</div>
+            <div class="detail-value">City Center</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Date</div>
+            <div class="detail-value">Today, <span id="current-date"></span></div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Passengers</div>
+            <div class="detail-value">1</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Fare</div>
+            <div class="detail-value">₹12</div>
+          </div>
+        </div>
+        
+        <div class="bus-arrival">
+          <h3>Bus Arrival</h3>
+          <div class="arrival-info">
+            <div class="eta">
+              <i class="fas fa-clock"></i>
+              <span>ETA: <span id="eta-time">5 min</span></span>
+            </div>
+            <div class="bus-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Bus is <span id="bus-distance">0.3 km</span> away</span>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div class="progress" id="arrival-progress"></div>
+            </div>
+            <div class="progress-labels">
+              <span>Current</span>
+              <span>Your Stop</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ticket-actions">
+          <button class="btn outline" id="cancel-ticket-btn">
+            <i class="fas fa-times"></i> Cancel Ticket
+          </button>
+          <button class="btn primary" id="view-journey-btn">
+            <i class="fas fa-map"></i> View Journey
+          </button>
+        </div>
+      </div>
+    </main>
+    
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="tickets.html" class="nav-item active">
+        <i class="fas fa-ticket-alt"></i>
+        <span>My Tickets</span>
+      </a>
+      <a href="routes.html" class="nav-item">
+        <i class="fas fa-route"></i>
+        <span>Routes</span>
+      </a>
+      <a href="profile.html" class="nav-item">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="ticket-script.js"></script>
+</body>
+</html>
+

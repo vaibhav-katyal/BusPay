@@ -1,0 +1,329 @@
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .profile-avatar-container {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: pulseAnimation 3s infinite;
+  }
+  
+  @keyframes pulseAnimation {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
+  .profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .avatar-edit-btn:hover {
+    transform: scale(1.1);
+    background: #e91e63;
+  }
+  
+  .profile-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+  .profile-status {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+  }
+  
+  .edit-profile-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .edit-profile-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+  
+  .profile-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .profile-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  .profile-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .profile-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .profile-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card-header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+  }
+  
+  .card-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .card-header h3 i {
+    color: var(--accent);
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .info-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+  
+  .info-value {
+    color: white;
+    font-weight: 500;
+  }
+  
+  .ticket-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .ticket-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .ticket-route {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  .ticket-details {
+    display: flex;
+    gap: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .ticket-details span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .ticket-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .ticket-status.completed {
+    background: rgba(56, 176, 0, 0.2);
+    color: #a7f3a0;
+  }
+  
+  .ticket-status.upcoming {
+    background: rgba(67, 97, 238, 0.2);
+    color: #a3b8ff;
+  }
+  
+  .ticket-status.cancelled {
+    background: rgba(208, 0, 0, 0.2);
+    color: #ffb3b3;
+  }
+  
+  .view-all-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .view-all-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .setting-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .setting-name {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  
+  .setting-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+  
+  .setting-btn {
+    background: none;
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .setting-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .logout-btn {
+    background: rgba(208, 0, 0, 0.2);
+    border: 1px solid rgba(208, 0, 0, 0.3);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: rgba(208, 0, 0, 0.3);
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .profile-name {
+      font-size: 1.5rem;
+    }
+    
+    .ticket-details {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }

@@ -1,0 +1,298 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4361ee, #7209b7);
+  }
+  
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .back-button a,
+  .share-button {
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .page-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .app-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding-bottom: 80px; /* Space for bottom nav */
+  }
+  
+  .ticket-card {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  /* Ticket Status */
+  .ticket-status {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .status-badge {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  
+  .status-badge.confirmed {
+    background: rgba(56, 176, 0, 0.2);
+    color: #38b000;
+  }
+  
+  .status-badge i {
+    margin-right: 8px;
+  }
+  
+  /* QR Code */
+  .ticket-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .qr-code {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .qr-code img {
+    width: 200px;
+    height: 200px;
+    display: block;
+  }
+  
+  .ticket-id {
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Ticket Details */
+  .ticket-details {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .detail-row:last-child {
+    border-bottom: none;
+  }
+  
+  .detail-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+  
+  .detail-value {
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Bus Arrival */
+  .bus-arrival {
+    margin-bottom: 25px;
+  }
+  
+  .arrival-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .eta,
+  .bus-location {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .eta i,
+  .bus-location i {
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .progress-container {
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .progress {
+    height: 100%;
+    width: 30%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+  
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+  }
+  
+  /* Ticket Actions */
+  .ticket-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn.primary {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .btn.primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .btn.outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+  
+  .btn.outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn i {
+    margin-right: 8px;
+  }
+  
+  /* Bottom Nav */
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    width: 25%;
+  }
+  
+  .nav-item i {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  
+  .nav-item span {
+    font-size: 0.8rem;
+  }
+  
+  .nav-item.active {
+    color: white;
+  }
+  
+  .nav-item.active i {
+    color: var(--accent);
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .qr-code img {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .ticket-actions {
+      flex-direction: column;
+    }
+  }
+  
+  

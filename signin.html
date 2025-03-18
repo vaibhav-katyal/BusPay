@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="signin-styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sign In Form -->
+        <div class="form-container" id="signin-container">
+            <h2>Sign In</h2>
+            <input type="email" id="signin-email" placeholder="Email">
+            <input type="password" id="signin-password" placeholder="Password">
+            <button id="signin-btn">Sign In</button>
+            <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form-container hidden" id="signup-container">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-name" placeholder="Full Name">
+            <input type="email" id="signup-email" placeholder="Email">
+            <input type="password" id="signup-password" placeholder="Password">
+            <button id="signup-btn">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="toggleForms()">Sign In</a></p>
+            <button id="forgotPasswordBtn">Forgot Password?</button>
+            <button id="googleLoginBtn">Login with Google</button>
+
+        </div>
+    </div>
+
+    <script src="firebaseConfig.js" type="module"></script>
+    <script src="signin-script.js" type="module"></script>
+    <script>
+        function toggleForms() {
+            document.getElementById("signin-container").classList.toggle("hidden");
+            document.getElementById("signup-container").classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+</html>

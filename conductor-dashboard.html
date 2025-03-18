@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusGo - Conductor Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="conductor-dashboard-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="conductor-body">
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <div class="conductor-info">
+        <div class="conductor-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="conductor-details">
+          <div class="conductor-name">Conductor Name</div>
+          <div class="conductor-id">ID: CON-12345</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="header-btn">
+          <i class="fas fa-bell"></i>
+        </button>
+        <button class="header-btn">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </header>
+    
+    <main class="dashboard-content">
+      <div class="trip-status-card">
+        <div class="trip-header">
+          <h2>Current Trip</h2>
+          <div class="trip-id">Trip ID: BUS-42-789</div>
+        </div>
+        
+        <div class="trip-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-route"></i>
+            </div>
+            <div class="detail-info">
+              <div class="detail-label">Route</div>
+              <div class="detail-value">Route 42</div>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-bus"></i>
+            </div>
+            <div class="detail-info">
+              <div class="detail-label">Bus ID</div>
+              <div class="detail-value">BUS-789</div>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="detail-info">
+              <div class="detail-label">Started</div>
+              <div class="detail-value">09:30 AM</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="occupancy-status">
+          <h3>Bus Occupancy</h3>
+          <div class="occupancy-bar">
+            <div class="occupancy-progress" style="width: 65%;"></div>
+          </div>
+          <div class="occupancy-details">
+            <div class="occupancy-item">
+              <div class="occupancy-label">Seated</div>
+              <div class="occupancy-value">26/40</div>
+            </div>
+            <div class="occupancy-item">
+              <div class="occupancy-label">Standing</div>
+              <div class="occupancy-value">12/20</div>
+            </div>
+            <div class="occupancy-item">
+              <div class="occupancy-label">Total</div>
+              <div class="occupancy-value">38/60</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button class="action-btn scan-btn">
+          <i class="fas fa-qrcode"></i>
+          <span>Scan Ticket</span>
+        </button>
+        <button class="action-btn issue-btn">
+          <i class="fas fa-ticket-alt"></i>
+          <span>Issue Ticket</span>
+        </button>
+      </div>
+      
+      <div class="passenger-list-card">
+        <div class="card-header">
+          <h2>Passenger List</h2>
+          <div class="passenger-count">38 Passengers</div>
+        </div>
+        
+        <div class="passenger-tabs">
+          <button class="tab-btn active" data-tab="all">All</button>
+          <button class="tab-btn" data-tab="boarded">Boarded</button>
+          <button class="tab-btn" data-tab="upcoming">Upcoming</button>
+        </div>
+        
+        <div class="passenger-list">
+          <div class="passenger-item">
+            <div class="passenger-info">
+              <div class="passenger-name">Passenger 1</div>
+              <div class="passenger-details">
+                <span class="ticket-id">BG-42-123456</span>
+                <span class="boarding-point">City Center</span>
+              </div>
+            </div>
+            <div class="passenger-status boarded">
+              <i class="fas fa-check-circle"></i>
+              <span>Boarded</span>
+            </div>
+          </div>
+          
+          <div class="passenger-item">
+            <div class="passenger-info">
+              <div class="passenger-name">Passenger 2</div>
+              <div class="passenger-details">
+                <span class="ticket-id">BG-42-123457</span>
+                <span class="boarding-point">Market Square</span>
+              </div>
+            </div>
+            <div class="passenger-status upcoming">
+              <i class="fas fa-clock"></i>
+              <span>Upcoming</span>
+            </div>
+          </div>
+          
+          <div class="passenger-item">
+            <div class="passenger-info">
+              <div class="passenger-name">Passenger 3</div>
+              <div class="passenger-details">
+                <span class="ticket-id">BG-42-123458</span>
+                <span class="boarding-point">Tech Park</span>
+              </div>
+            </div>
+            <div class="passenger-status boarded">
+              <i class="fas fa-check-circle"></i>
+              <span>Boarded</span>
+            </div>
+          </div>
+          
+          <div class="passenger-item">
+            <div class="passenger-info">
+              <div class="passenger-name">Passenger 4</div>
+              <div class="passenger-details">
+                <span class="ticket-id">BG-42-123459</span>
+                <span class="boarding-point">Central Station</span>
+              </div>
+            </div>
+            <div class="passenger-status upcoming">
+              <i class="fas fa-clock"></i>
+              <span>Upcoming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="trip-actions">
+        <button class="trip-action-btn end-trip-btn">
+          <i class="fas fa-flag-checkered"></i>
+          <span>End Trip</span>
+        </button>
+        <button class="trip-action-btn report-btn">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Report Issue</span>
+        </button>
+      </div>
+    </main>
+    
+    <nav class="conductor-nav">
+      <a href="conductor-dashboard.html" class="nav-item active">
+        <i class="fas fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="conductor-trips.html" class="nav-item">
+        <i class="fas fa-route"></i>
+        <span>Trips</span>
+      </a>
+      <a href="conductor-scanner.html" class="nav-item">
+        <i class="fas fa-qrcode"></i>
+        <span>Scanner</span>
+      </a>
+      <a href="conductor-profile.html" class="nav-item">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+      </a>
+    </nav>
+  </div>
+
+  <div class="scanner-overlay" id="scanner-overlay">
+    <div class="scanner-container">
+      <div class="scanner-header">
+        <h2>Scan Ticket</h2>
+        <button class="close-scanner-btn" id="close-scanner-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="scanner-content">
+        <div class="scanner-frame">
+          <div class="scanner-animation"></div>
+        </div>
+        <div class="scanner-instructions">
+          <p>Position the QR code within the frame to scan</p>
+        </div>
+      </div>
+      
+      <div class="scanner-actions">
+        <button class="btn outline" id="toggle-flash-btn">
+          <i class="fas fa-bolt"></i> Toggle Flash
+        </button>
+        <button class="btn primary" id="manual-entry-btn">
+          <i class="fas fa-keyboard"></i> Manual Entry
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="conductor-dashboard-script.js"></script>
+</body>
+</html>
+

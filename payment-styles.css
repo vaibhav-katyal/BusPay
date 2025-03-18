@@ -1,0 +1,344 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4361ee, #7209b7);
+  }
+  
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .back-button a {
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+  
+  .page-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .empty-space {
+    width: 24px;
+  }
+  
+  .app-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+  }
+  
+  .payment-card {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  /* Trip Summary */
+  .trip-summary {
+    margin-bottom: 25px;
+  }
+  
+  .trip-route {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .location {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px 0;
+  }
+  
+  .location i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .location.start i {
+    color: var(--success);
+  }
+  
+  .location.end i {
+    color: var(--accent);
+  }
+  
+  .route-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0 5px 10px;
+  }
+  
+  .route-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+  
+  .route-dash {
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(to bottom, white 50%, transparent 50%);
+    background-size: 2px 10px;
+    margin: 5px 0;
+  }
+  
+  .trip-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  .info-item i {
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Fare Selection */
+  .fare-selection {
+    margin-bottom: 25px;
+  }
+  
+  .fare-options {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+  
+  .fare-option {
+    flex: 1;
+    min-width: 80px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .fare-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .fare-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    color: white;
+  }
+  
+  .fare-amount {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .fare-type {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .fare-option input:checked + .fare-label {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px var(--primary);
+  }
+  
+  /* Passenger Count */
+  .passenger-count {
+    margin-bottom: 25px;
+  }
+  
+  .counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .counter-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .counter-btn.minus {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .counter-btn.plus {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .counter-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .counter-value {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 60px;
+    text-align: center;
+  }
+  
+  /* Payment Summary */
+  .payment-summary {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .summary-row:last-child {
+    border-bottom: none;
+  }
+  
+  .summary-row.total {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-top: 10px;
+  }
+  
+  /* Payment Methods */
+  .payment-methods {
+    margin-bottom: 25px;
+  }
+  
+  .payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .payment-option {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .payment-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .payment-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    color: white;
+  }
+  
+  .payment-label i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .payment-option input:checked + .payment-label {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px var(--primary);
+  }
+  
+  /* Pay Button */
+  .pay-btn {
+    margin-top: 10px;
+    background: var(--success);
+  }
+  
+  .pay-btn:hover {
+    background: #2d9900;
+  }
+  
+  .pay-btn i {
+    margin-right: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .fare-options {
+      flex-wrap: wrap;
+    }
+  
+    .fare-option {
+      min-width: calc(33.33% - 7px);
+    }
+  
+    .payment-options {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  

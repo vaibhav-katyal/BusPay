@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusGo - Payment</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="payment-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="back-button">
+        <a href="home.html"><i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="page-title">Payment</div>
+      <div class="empty-space"></div>
+    </header>
+    
+    <main class="app-content">
+      <div class="glass-card payment-card">
+        <div class="trip-summary">
+          <h3>Trip Summary</h3>
+          <div class="trip-details">
+            <div class="trip-route">
+              <div class="location start">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Current Location</span>
+              </div>
+              <div class="route-line">
+                <div class="route-dot"></div>
+                <div class="route-dash"></div>
+                <div class="route-dot"></div>
+              </div>
+              <div class="location end">
+                <i class="fas fa-map-pin"></i>
+                <span>City Center</span>
+              </div>
+            </div>
+            
+            <div class="trip-info">
+              <div class="info-item">
+                <i class="fas fa-route"></i>
+                <span>Route 42</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <span>ETA: 5 min</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-ticket-alt"></i>
+                <span>One Way</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fare-selection">
+          <h3>Select Fare</h3>
+          <div class="fare-options">
+            <label class="fare-option">
+              <input type="radio" name="fare" value="10" checked>
+              <span class="fare-label">
+                <span class="fare-amount">₹10</span>
+                <span class="fare-type">Basic</span>
+              </span>
+            </label>
+            
+            <label class="fare-option">
+              <input type="radio" name="fare" value="20">
+              <span class="fare-label">
+                <span class="fare-amount">₹20</span>
+                <span class="fare-type">Standard</span>
+              </span>
+            </label>
+            
+            <label class="fare-option">
+              <input type="radio" name="fare" value="30">
+              <span class="fare-label">
+                <span class="fare-amount">₹30</span>
+                <span class="fare-type">Premium</span>
+              </span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="passenger-count">
+          <h3>Passengers</h3>
+          <div class="counter">
+            <button class="counter-btn minus" id="decrease-passengers">
+              <i class="fas fa-minus"></i>
+            </button>
+            <span class="counter-value" id="passenger-count">1</span>
+            <button class="counter-btn plus" id="increase-passengers">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="payment-summary">
+          <div class="summary-row">
+            <span>Fare (₹10 x 1)</span>
+            <span id="fare-total">₹10</span>
+          </div>
+          <div class="summary-row">
+            <span>Service Fee</span>
+            <span>₹2</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="total-amount">₹12</span>
+          </div>
+        </div>
+        
+        <div class="payment-methods">
+          <h3>Payment Method</h3>
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="payment-method" value="upi" checked>
+              <span class="payment-label">
+                <i class="fas fa-mobile-alt"></i>
+                <span>UPI</span>
+              </span>
+            </label>
+            
+            <label class="payment-option">
+              <input type="radio" name="payment-method" value="wallet">
+              <span class="payment-label">
+                <i class="fas fa-wallet"></i>
+                <span>Wallet</span>
+              </span>
+            </label>
+            
+            <label class="payment-option">
+              <input type="radio" name="payment-method" value="card">
+              <span class="payment-label">
+                <i class="fas fa-credit-card"></i>
+                <span>Card</span>
+              </span>
+            </label>
+            
+            <label class="payment-option">
+              <input type="radio" name="payment-method" value="netbanking">
+              <span class="payment-label">
+                <i class="fas fa-university"></i>
+                <span>Net Banking</span>
+              </span>
+            </label>
+          </div>
+        </div>
+        
+        <button id="pay-now-btn" class="btn primary pay-btn">
+          <i class="fas fa-lock"></i> Pay Now ₹12
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="payment-script.js"></script>
+</body>
+</html>
+

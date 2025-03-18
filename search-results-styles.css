@@ -1,0 +1,159 @@
+.search-summary {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .route-info {
+    flex: 1;
+  }
+  
+  .route-points {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--gray-800);
+    margin-bottom: 5px;
+  }
+  
+  .route-points i {
+    color: var(--primary);
+    margin: 0 10px;
+  }
+  
+  .travel-info {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+  }
+  
+  .modify-search-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .search-results {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .bus-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+  
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--gray-200);
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .bus-loading p {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+  }
+  
+  .bus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .bus-item {
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    border: 1px solid var(--gray-200);
+  }
+  
+  .bus-item:hover {
+    background: white;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .bus-info {
+    flex: 1;
+  }
+  
+  .bus-name {
+    font-weight: 500;
+    color: var(--gray-800);
+    margin-bottom: 5px;
+  }
+  
+  .bus-type {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin-bottom: 5px;
+  }
+  
+  .bus-time {
+    font-size: 0.9rem;
+    color: var(--gray-700);
+  }
+  
+  .bus-price {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.1rem;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  .select-seats-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 480px) {
+    .search-summary {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .modify-search-btn {
+      width: 100%;
+    }
+  
+    .bus-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .bus-price {
+      text-align: left;
+      margin-top: 10px;
+    }
+  
+    .select-seats-btn {
+      width: 100%;
+    }
+  }
+  
+  

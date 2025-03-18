@@ -1,0 +1,551 @@
+.conductor-body {
+    background: linear-gradient(135deg, #3a0ca3, #4361ee);
+    min-height: 100vh;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .conductor-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .conductor-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .conductor-name {
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .conductor-id {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .header-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    padding-bottom: 80px; /* Space for bottom nav */
+  }
+  
+  /* Trip Status Card */
+  .trip-status-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .trip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .trip-id {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+  
+  .trip-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .detail-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+  }
+  
+  .detail-value {
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Occupancy Status */
+  .occupancy-status {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  
+  .occupancy-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  
+  .occupancy-progress {
+    height: 100%;
+    background: linear-gradient(to right, #4cc9f0, #4361ee);
+    border-radius: 5px;
+  }
+  
+  .occupancy-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .occupancy-item {
+    text-align: center;
+  }
+  
+  .occupancy-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .occupancy-value {
+    color: white;
+    font-weight: 600;
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .action-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+  }
+  
+  .action-btn i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .scan-btn {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  }
+  
+  .issue-btn {
+    background: linear-gradient(135deg, #7209b7, #560bad);
+  }
+  
+  .action-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Passenger List Card */
+  .passenger-list-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .passenger-count {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+  
+  .passenger-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+  
+  .tab-btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .tab-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .passenger-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .passenger-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .passenger-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .passenger-name {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .passenger-details {
+    display: flex;
+    gap: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+  }
+  
+  .passenger-status {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+  }
+  
+  .passenger-status.boarded {
+    background: rgba(56, 176, 0, 0.2);
+    color: #38b000;
+  }
+  
+  .passenger-status.upcoming {
+    background: rgba(67, 97, 238, 0.2);
+    color: #4361ee;
+  }
+  
+  .passenger-status i {
+    margin-right: 5px;
+  }
+  
+  /* Trip Actions */
+  .trip-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .trip-action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .trip-action-btn i {
+    margin-right: 10px;
+  }
+  
+  .end-trip-btn {
+    background: #38b000;
+    color: white;
+  }
+  
+  .report-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .trip-action-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Conductor Nav */
+  .conductor-nav {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    width: 25%;
+  }
+  
+  .nav-item i {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  
+  .nav-item span {
+    font-size: 0.8rem;
+  }
+  
+  .nav-item.active {
+    color: white;
+  }
+  
+  .nav-item.active i {
+    color: #f72585;
+  }
+  
+  /* Scanner Overlay */
+  .scanner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .scanner-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .scanner-container {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .scanner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .scanner-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .close-scanner-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .scanner-content {
+    padding: 20px;
+  }
+  
+  .scanner-frame {
+    width: 100%;
+    aspect-ratio: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .scanner-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f72585;
+    box-shadow: 0 0 10px #f72585;
+    animation: scan 2s linear infinite;
+  }
+  
+  @keyframes scan {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 100%;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  .scanner-instructions {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+  }
+  
+  .scanner-actions {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px;
+  }
+  
+  .scanner-actions .btn {
+    flex: 1;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .trip-details {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+    }
+  
+    .trip-actions {
+      flex-direction: column;
+    }
+  }
+  
+  
