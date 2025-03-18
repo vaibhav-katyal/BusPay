@@ -3,73 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".glass-card").style.opacity = "1"
   document.querySelector(".glass-card").style.transform = "translateY(0)"
 
-  // Toggle password visibility
-  const togglePassword = document.querySelector(".toggle-password")
-  const passwordInput = document.getElementById("password")
-
-  togglePassword.addEventListener("click", function () {
-    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
-    passwordInput.setAttribute("type", type)
-    this.querySelector("i").classList.toggle("fa-eye")
-    this.querySelector("i").classList.toggle("fa-eye-slash")
-  })
-
-  // Refresh captcha
-  const refreshCaptcha = document.querySelector(".refresh-captcha")
-  const captchaText = document.getElementById("captcha-text")
-
-  refreshCaptcha.addEventListener("click", () => {
-    captchaText.textContent = generateCaptcha()
-  })
-
-  // Generate random captcha
-  function generateCaptcha() {
-    const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    let captcha = ""
-    for (let i = 0; i < 6; i++) {
-      captcha += chars.charAt(Math.floor(Math.random() * chars.length))
-    }
-    return captcha
-  }
-
-  // Set initial captcha
-  captchaText.textContent = generateCaptcha()
-
   // Conductor login form submission
   const conductorLoginForm = document.getElementById("conductor-login-form")
   conductorLoginForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    const employeeId = document.getElementById("employee-id").value
-    const password = passwordInput.value
-    const captchaInput = document.getElementById("captcha").value
-
-    // Validate inputs
-    if (!employeeId.trim()) {
-      showNotification("Please enter your Employee ID", "error")
-      return
-    }
-
-    if (!password.trim()) {
-      showNotification("Please enter your password", "error")
-      return
-    }
-
-    if (!captchaInput.trim()) {
-      showNotification("Please enter the captcha", "error")
-      return
-    }
-
-    // Validate captcha
-    if (captchaInput.toUpperCase() !== captchaText.textContent) {
-      showNotification("Invalid captcha. Please try again.", "error")
-      captchaText.textContent = generateCaptcha()
-      document.getElementById("captcha").value = ""
-      return
-    }
-
     const submitBtn = conductorLoginForm.querySelector('button[type="submit"]')
-    submitBtn.disabled = true
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...'
 
     // Simulate login
@@ -84,35 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create notification element
     const notification = document.createElement("div")
     notification.className = `notification ${type}`
-
-    let title, icon
-    switch (type) {
-      case "success":
-        title = "Success"
-        icon = "check-circle"
-        break
-      case "error":
-        title = "Error"
-        icon = "exclamation-circle"
-        break
-      case "warning":
-        title = "Warning"
-        icon = "exclamation-triangle"
-        break
-      case "info":
-      default:
-        title = "Information"
-        icon = "info-circle"
-        type = "info"
-    }
-
     notification.innerHTML = `
-      <div class="notification-icon">
-        <i class="fas fa-${icon}"></i>
-      </div>
       <div class="notification-content">
-        <div class="notification-title">${title}</div>
-        <div class="notification-message">${message}</div>
+        <i class="fas ${type === "success" ? "fa-check-circle" : "fa-exclamation-circle"}"></i>
+        <span>${message}</span>
       </div>
     `
 
@@ -124,13 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
       notification.classList.add("show")
     }, 10)
 
-    // Remove notification after 4 seconds
+    // Remove notification after 3 seconds
     setTimeout(() => {
       notification.classList.remove("show")
       setTimeout(() => {
         notification.remove()
       }, 300)
-    }, 4000)
+    }, 3000)
   }
 
   // Add notification styles
